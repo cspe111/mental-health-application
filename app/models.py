@@ -3,7 +3,7 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
-df = pd.read_csv('mental-health-survey-cleaned.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/cspe111/mental-health-application/master/app/mental-health-survey-cleaned.csv')
 
 
 df.drop(df[df['Age'] < 0].index, inplace=True)
