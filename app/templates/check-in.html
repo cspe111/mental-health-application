@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check In</title>
+</head>
+<style>
+     h4 {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+        font-family: Avenir,sans-serif;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        font-family: Avenir,sans-serif;
+    }
+    div {
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-family: Avenir,sans-serif;
+    }
+    input {
+        font-family: Avenir,sans-serif;
+        background: linear-gradient(to right, cyan , magenta);
+        padding: 12px 120px;
+        font-size: 20px;
+        border-radius: 50px;
+        border-width: 0px;
+        width: 320px;
+        cursor: pointer;
+        margin: 30px;
+    }
+    input:hover {
+        background: darkorchid;
+        color: white;
+        border-width: 0px;
+    }
+    select {
+        width: 200px;
+        font-family: Avenir, sans-serif;
+        font-size: 14px;
+    }
+</style>
+<body>
+<h4> Select a user you would like to check in on.</h4>
+<form>
+  <select name="users" id="users" multiple>
+      <option value="user1">User 1</option>
+      <option value="user2">User 2</option>
+      <option value="user3">User 3</option>
+      <option value="user4">User 4</option>
+      <option value="user5">User 5</option>
+  </select>
+</form>
+<div>
+  <input type="submit" onclick="notification()" value="Check In">
+</div>
+    <script>
+        function notification() {
+            if (window.confirm("Send check in notification?")) {
+                window.confirm("A notification has been sent.");
+            }
+        }
+    </script>
+</body>
+</html>

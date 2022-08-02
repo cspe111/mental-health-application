@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Page</title>
+</head>
+<style>
+     h1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+        font-family: Avenir,sans-serif;
+    }
+    p {
+        display: flex;
+        justify-content: center;
+        font-family: Avenir,sans-serif;
+    }
+    div {
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-family: Avenir,sans-serif;
+    }
+    button {
+        font-family: Avenir,sans-serif;
+        background: linear-gradient(to right, cyan , magenta);
+        padding: 12px 120px;
+        font-size: 20px;
+        border-radius: 50px;
+        border-width: 0px;
+        width: 400px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: darkorchid;
+        color: white;
+        border-width: 0px;
+    }
+</style>
+<body>
+    <h1> Hello, there! </h1>
+    <p> What would you like to do today? </p>
+    <div>
+        <button onclick="document.location='check-in'"> Check In </button>
+        <button onclick="document.location='learn'"> Learn </button>
+    </div>
+</body>
+</html>

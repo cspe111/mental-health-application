@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Page</title>
+</head>
+<style>
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-family: Avenir,sans-serif;
+    }
+    h2 {
+        display: flex;
+        justify-content: center;
+        font-family: Avenir,sans-serif;
+        margin-bottom: 2px;
+    }
+    h3 {
+        display: flex;
+        justify-content: center;
+        font-family: Avenir, sans-serif;
+        color: darkorchid;
+        margin-top: auto;
+    }
+    p {
+        display: flex;
+        justify-content: center;
+        font-family: Avenir,sans-serif;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+    div {
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-family: Avenir,sans-serif;
+    }
+    button {
+        font-family: Avenir,sans-serif;
+        background: linear-gradient(to right, cyan , magenta);
+        padding: 4px;
+        font-size: 16px;
+        border-radius: 50px;
+        border-width: 0px;
+        width: 320px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: darkorchid;
+        color: white;
+        border-width: 0px;
+    }
+    form {
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-family: Avenir,sans-serif;
+        font-weight: 500;
+    }
+    select {
+        width: 150px;
+        font-family: Avenir, sans-serif;
+        font-size: 14px;
+        text-align: center;
+
+    }
+    input {
+        font-family: Avenir,sans-serif;
+        background: linear-gradient(to right, cyan , magenta);
+        padding: 4px;
+        font-size: 16px;
+        border-radius: 50px;
+        border-width: 0px;
+        width: 230px;
+        cursor: pointer;
+    }
+    input:hover{
+        background: darkorchid;
+        color: white;
+        border-width: 0px;
+    }
+</style>
+<body>
+<h1>Hello, what would you like to do today?</h1>
+<div>
+    <button onclick="breatherNotif()">Send Breather Notification</button>
+</div>
+<p>A breather notification alerts your manager that you <br> are taking a break to recharge your mental health.</p>
+<div>
+    <button onclick="checkinUpdate()">Send a Check In Update</button>
+</div>
+<p>A check in update allows you to tell your manager <br> how you're feeling.</p>
+
+<h2>Should you speak with your manager?</h2>
+<h3> {{ prediction }} </h3>
+<p style="font-size:14px; margin-bottom: auto">Please fill in the provided input.</p>
+  <form action="/result" method="POST">
+      <label for="age">Age</label>
+      <br>
+      <select id="age" name="age">
+          <option value="0">5</option>
+          <option value="1">8</option>
+          <option value="2">11</option>
+          <option value="3">18</option>
+          <option value="4">19</option>
+          <option value="5">20</option>
+          <option value="6">21</option>
+          <option value="7">22</option>
+          <option value="8">23</option>
+          <option value="9">24</option>
+          <option value="10">25</option>
+          <option value="11">26</option>
+          <option value="12">27</option>
+          <option value="13">28</option>
+          <option value="14">29</option>
+          <option value="15">30</option>
+          <option value="16">31</option>
+          <option value="17">32</option>
+          <option value="18">33</option>
+          <option value="19">34</option>
+          <option value="20">35</option>
+          <option value="21">36</option>
+          <option value="22">37</option>
+          <option value="23">38</option>
+          <option value="24">39</option>
+          <option value="25">40</option>
+          <option value="26">41</option>
+          <option value="27">42</option>
+          <option value="28">43</option>
+          <option value="29">44</option>
+          <option value="30">45</option>
+          <option value="31">46</option>
+          <option value="32">47</option>
+          <option value="33">48</option>
+          <option value="34">49</option>
+          <option value="35">50</option>
+          <option value="36">51</option>
+          <option value="37">53</option>
+          <option value="38">54</option>
+          <option value="39">55</option>
+          <option value="40">56</option>
+          <option value="41">57</option>
+          <option value="42">58</option>
+          <option value="43">60</option>
+          <option value="44">61</option>
+          <option value="45">62</option>
+          <option value="46">65</option>
+          <option value="47">72</option>
+      </select>
+      <br>
+      <label for="gender">Gender</label>
+      <br>
+        <select id="gender" name="gender">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+            <option value="2">Other</option>
+        </select>
+      <br>
+      <label for="history">Do you have a family history of mental illness?</label>
+      <br>
+        <select id="history" name="history">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+      <br>
+      <label for="treatment">Have you sought treatment for a mental health condition?</label>
+      <br>
+        <select id="treatment" name="treatment">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+      <br>
+      <label for="interfere">If you have a mental health condition, do you feel that it interferes with your work?</label>
+      <br>
+        <select id="interfere" name="interfere">
+            <option value="0">Never</option>
+            <option value="1">Not Sure</option>
+            <option value="2">Often</option>
+            <option value="3">Rarely</option>
+            <option value="4">Sometimes</option>
+        </select>
+      <br>
+      <label for="help">Does your employer provide resources to learn more about mental health issues and how to seek help?</label>
+      <br>
+        <select id="help" name="help">
+            <option value="0">Don't Know</option>
+            <option value="1">No</option>
+            <option value="2">Yes</option>
+        </select>
+      <br>
+      <label for="consequence">Do you think that discussing a mental health issue with your employer would have negative consequences?</label>
+      <br>
+        <select id="consequence" name="consequence">
+            <option value="0">Maybe</option>
+            <option value="1">No</option>
+            <option value="2">Yes</option>
+        </select>
+      <br>
+      <label for="open-to-discuss">Would you be willing to discuss a mental health issue with your coworkers?</label>
+      <br>
+        <select id="open-to-discuss" name="open-to-discuss">
+            <option value="0">No</option>
+            <option value="1">Some of them</option>
+            <option value="2">Yes</option>
+        </select>
+    <br> <br>
+<input type="submit" value="Submit">
+
+  </form>
+
+<script>
+        function breatherNotif() {
+            if (window.confirm("Send breather notification?")) {
+                window.confirm("A notification has been sent.");
+            }
+        }
+        function checkinUpdate() {
+            if (window.confirm("Send check in update?")) {
+                window.confirm("An update has been sent.");
+            }
+        }
+    </script>
+</body>
+</html>
