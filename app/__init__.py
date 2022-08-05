@@ -22,7 +22,7 @@ def learn():
 def index():
     return render_template('employee.html')
 
-@app.rout('/stats')
+@app.route('/stats')
 def stats():
     return render_template('stats.html')
 
