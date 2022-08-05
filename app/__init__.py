@@ -22,6 +22,10 @@ def learn():
 def index():
     return render_template('employee.html')
 
+@app.rout('/stats')
+def stats():
+    return render_template('stats.html')
+
 
 # Function that makes prediction
 def ValuePredictor(to_predict_list):
