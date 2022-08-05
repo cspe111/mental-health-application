@@ -27,7 +27,7 @@ def stats():
     return render_template('stats.html')
 
 
-# Function that makes prediction
+# Function that loads model that will make prediction
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1, 8)
     loaded_model = pickle.load(open("model.pkl", "rb"))
